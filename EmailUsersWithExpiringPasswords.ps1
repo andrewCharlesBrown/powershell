@@ -3,7 +3,7 @@
 <#
 .SYNOPSIS
 
-This script emails users users with passwords that are about to expire, or have recently expired.
+This script emails users with passwords that are about to expire, or have recently expired.
 By: Andrew Brown
 www.zinmorrow.com
 Sunday, March 12, 2017 1:21:54 PM
