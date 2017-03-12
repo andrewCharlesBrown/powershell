@@ -19,8 +19,8 @@ Import-Module ActiveDirectory
 # define arguments for Send-MailMessage
 [System.Management.Automation.PSCredential] $cred = Get-Credential
 [System.String] $from =  $from = $cred.UserName
-[System.int32] $port = 587
-[System.String] $smtpServer = "smtp.office365.com"
+[System.int32] $port = 587 # or your defined port
+[System.String] $smtpServer = "smtp.office365.com" # or your defined smtp server
 [System.String] $cc # define carbon copy email address here
 [System.String] $reportEmail # define the address to which the general expiration reports will be sent to
 
