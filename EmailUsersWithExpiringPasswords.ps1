@@ -18,14 +18,14 @@ Import-Module ActiveDirectory
 
 # define arguments for Send-MailMessage
 [System.Management.Automation.PSCredential] $cred = Get-Credential
-[System.String] $from =  $from = $cred.UserName
+[System.String] $from = $cred.UserName
 [System.int32] $port = 587 # or your defined port
 [System.String] $smtpServer = "smtp.office365.com" # or your defined smtp server
 [System.String] $cc # define carbon copy email address here
 [System.String] $reportEmail # define the address to which the general expiration reports will be sent to
 
 # get object array of users and their password expiration data from ADUC
-[System.Object[]]$expiryData  = Get-ADUser -filter {Enabled -eq $true -and PasswordNeverExpires -eq $false} -Properties "Displayname", "msDS-UserPasswordExprireyTimecomputed", "mail" |
+[System.Object[]]$expiryData  = Get-ADUser -filter {Enabled -eq $true -and PasswordNeverExpires -eq $false} -Properties "DisplayName", "msDS-UserPasswordExpiryTimeComputed", "mail" |
 Select-Object -Property "DisplayName", @{Name="ExpiryDate";Expression={[datetime]::FromFileTime($_."msDS-UserPasswordExprireyTimecomputed")}},"mail" | Sort-Object "DisplayName"
 
 # define StringBuilder objects to collect report data
