@@ -9,7 +9,7 @@ Sunday, March 12, 2017 1:21:54 PM
 
 #>
 
-# Ad Module should import automatically with Get-ADUser but if not...
+# ADUC Module should import automatically with Get-ADUser but if not...
 Import-Module ActiveDirectory
 
 # define the number of days until password expiration
