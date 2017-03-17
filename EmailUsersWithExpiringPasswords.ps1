@@ -70,6 +70,9 @@ foreach($user in $expiryData) {
    
 }
 
+if(!($sbExpiring.ToString())) {$sbExpiring.Append("No passwords will be expiring within the next 7 days.") }
+if(!($sbExpired.ToString())) {$sbExpired.Append("No passwords have expired within the past 3 days.")}
+
  # email a report of all expired and expiring user passwords to sysadmin or helpdesk
  Send-MailMessage -To $reportEmail -from $from -Subject $subjectStringExpiringReport -Body $sbExpiring.ToString() -BodyAsHtml -smtpserver $smtpServer -usessl -Credential $cred -Port $port
  Send-MailMessage -To $reportEmail -from $from -Subject $subjectStringExpiredReport -Body $sbExpired.ToString() -BodyAsHtml -smtpserver $smtpServer -usessl -Credential $cred -Port $port
