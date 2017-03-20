@@ -29,7 +29,7 @@ while($true) {
 
     $countTotalPackets++
     $averageTime = [System.Double]$totalTime / $countTotalPackets
-    $percentSucceeded =  $countSucceeded / $countTotalPackets
+    $percentSucceeded =  [System.Double]$countSucceeded / $countTotalPackets
     $hours = $runtime.Elapsed.Hours
     $minutes = $runtime.Elapsed.Minutes
     $seconds = $runtime.Elapsed.Seconds
