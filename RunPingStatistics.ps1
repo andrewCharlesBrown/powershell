@@ -59,7 +59,7 @@ while($true) {
         
         "{0:P4}" -f $percentSucceeded + " success with an average ping time of " + "{0:N4}" -f $averageTime + `
         " ms at runtime point " + $hours + " hours, " + $minutes + " minutes, and " + $seconds + " seconds. The min time is " + $minTime + `
-        ". The max time is " + $maxTime + "."
+        ". The max time is " + $maxTime + ". " + $countFailed + " dropped packets."
        
     }
     elseif($failed) {
